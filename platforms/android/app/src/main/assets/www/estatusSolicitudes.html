@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+
+    
+    <title>DEKKERAPP</title>
+</head>
+
+<body>
+    <div class="container col-lg-12">
+      <div class="row">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+
+            <a href="index.html"><center><img src="img/logo-blanco.png" alt="" id="img2"></center></a>
+            
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida">
+
+            <center><h2>Estatus</h2></center>
+            
+        </div>
+        <div class="bar bar-header">
+            
+            
+            <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
+        </div>
+        <div id="principal" class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 0px">
+            <div class="col-lg-12">
+                 <div class="col-lg-6 col-md-6 col-sm-6 cuadro"></div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 " style="margin-top: -60px;font-size: 14px;font-weight: bold;margin-left: 60px;">Solicitud Enviada <p id="horaSolicitud"></p></div>
+                 
+            </div>
+            <div class="v1"></div>
+             <div class="col-lg-12" style="z-index: 101;margin-top: -50px">
+                 <div class="col-lg-6 col-md-6 col-sm-6 cuadroRojo" id="motoEnCamino"></div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 " style="margin-top: -70px;font-size: 14px;font-weight: bold;margin-left: 60px;">Recolección en Camino <p id="horaEnCamino"></p></div>
+            </div>
+            <div class="v1"></div>
+             <div class="col-lg-12" style="z-index: 101;margin-top: -50px">
+                 <div class="col-lg-6 col-md-6 col-sm-6 cuadroRojo" id="enProceso"></div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 " style="margin-top: -70px;font-size: 14px;font-weight: bold;margin-left: 60px;">En proceso <p id="horaEnProceso"></p></div>
+            </div>
+            <div class="v1"></div>
+             <div class="col-lg-12" style="z-index: 101;margin-top: -50px">
+                 <div class="col-lg-6 col-md-6 col-sm-6 cuadroRojo" id="motoEnCaminoRegreso"></div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 " style="margin-top: -70px;font-size: 14px;font-weight: bold;margin-left: 60px;">Entrega en Camino <p id="horaRegreso"></p></div>
+            </div>
+            <div class="v1"></div>
+             <div class="col-lg-12" style="z-index: 101;margin-top: -50px">
+                 <div class="col-lg-6 col-md-6 col-sm-6 cuadroRojo" id="concluido"></div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 " style="margin-top: -70px;font-size: 14px;font-weight: bold;margin-left: 60px;">Concluido <p id="horaConcluido"></p></div>
+            </div>
+            <br>
+            <br>
+            <span id="saludoConcluido"></span>
+            
+            
+        </div>
+
+
+        
+      </div>
+       <br>
+        <br>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script type="text/javascript">
+
+        app.initialize();
+          $(document).ready(function(){
+
+              var elemento2 = document.getElementById("motoEnCamino");
+              var elemento4 = document.getElementById("enProceso");
+              var elemento6 = document.getElementById("motoEnCaminoRegreso");
+              var elemento7 = document.getElementById("concluido");
+              
+                if (localStorage.motoEnCamino == 1) {
+                  elemento2.className = "cuadro";
+                }else {
+                  elemento2.className = "cuadroRojo";
+                }
+                if (localStorage.enProceso == 1) {
+                  elemento4.className = "cuadro";
+                }else {
+                  elemento4.className = "cuadroRojo";
+                }
+                if (localStorage.motoEnCaminoRegreso == 1) {
+                  elemento6.className = "cuadro";
+                }else {
+                  elemento6.className = "cuadroRojo";
+                }
+                if (localStorage.concluido == 1) {
+                  elemento7.className = "cuadro";
+                }else {
+                  elemento7.className = "cuadroRojo";
+                }
+
+          })
+          
+        
+    </script>
+
+</body>
+
+</html>

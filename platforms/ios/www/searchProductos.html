@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+     <link rel="stylesheet" type="text/css" href="css/animate.css">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
+    <title>DEKKERAPP</title>
+</head>
+
+<body>
+    <div class="container col-lg-12">
+      <div class="row">
+        <div class="divBienvenidaMarcas">
+          <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+
+               <a href="index.html"><center><img src="img/logo-blanco.png" alt="" id="img2"></center></a>
+              
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida">
+              <div class="bar bar-header" id="btnRegresar" style="margin-top: 5px;color: #0000ff">
+                 <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a>   
+              </div>
+              <form action="searchProductos.html" method="POST" id="formSearchProductos">
+                  <input type="text" name="buscadorProductos" id="buscadorProductos" placeholder="¿Qué estás buscando?">
+              </form>
+               <a href="procesoSolicitud.html"><div id="carroCompras"  style="margin-top: -48px;background: transparent;"><img src="img/carrito-compras.png" alt="" width="100%"></div></a>
+
+          </div>
+      </div>
+      <div style="margin-top: 40%">
+        <div id="principal" class="col-lg-12 col-md-12 col-sm-12" >
+           <h5 style="text-transform: capitalize;margin-top: -20px">Buscar por el nombre del producto, código o marca del producto.</h5>
+           <div class="col-lg-12 col-md-12 col-sm-12" id="loader">
+            <img src="img/buscando.gif" alt="responsive" style="width:100%">
+               
+           </div>
+
+                <table class="resultadosBusqueda" id="resultadosBusqueda">
+                    <div class="container col-lg-12 col-md-12 col-sm-12">
+                        <div class="row" id="tableResultadosBusqueda">
+
+                        </div>
+                    </div>
+                </table>
+           <div class="col-lg-12 col-md-12 col-sm-12">
+
+            </div>
+            
+        </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+    
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+    <script type="text/javascript">
+        app.initialize();
+        
+    </script>
+    <script>
+      
+    </script>
+    <style type="text/css">
+       #buscadorProductos {
+          width: 75%;
+          color: black;
+          box-sizing: border-box;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+          background-color: white;
+          background-image: url('img/search.png');
+          background-position: 10px 10px; 
+          background-repeat: no-repeat;
+          padding: 12px 20px 12px 40px;
+          -webkit-transition: width 0.4s ease-in-out;
+          transition: width 0.4s ease-in-out;
+        }
+
+        #buscadorProductos:focus {
+          width: 75%;
+          color: black;
+        }
+    </style>    
+</body>
+
+</html>
+

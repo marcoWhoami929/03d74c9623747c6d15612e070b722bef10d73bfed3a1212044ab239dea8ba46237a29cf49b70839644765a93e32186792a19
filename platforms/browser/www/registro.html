@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+
+    <title>DEKKERAPP</title>
+
+    <style>
+      #mapa-geocoder { 
+        margin-left: 5%;
+        width: 90%;
+        height: 450px;
+        box-shadow: 5px 5px 5px #888;
+     }
+     #verMapa{
+      display: none;
+     }
+     .ui-autocomplete.ui-widget {
+        font-size: 12px;
+      }
+
+    </style>
+</head>
+
+<body onload="initialize()">
+    <div class="container col-lg-12">
+      <div class="row">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+
+             <center><img src="img/logo-blanco.png" alt="" id="img2"></center>
+            
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida">
+
+
+            <center><h2>REGISTRO</h2></center>
+            
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+             <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a>  
+             <br>
+             <br>
+           
+              <form action="">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <span><strong>*Nombre completo:</strong></span>
+                  <input type="text" class="form-control inputsRegistro" id="fullname" name="fullname" placeholder="Ingresar Nombre">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                   <span><strong>*Correo Electrónico:</strong></span>
+                   <input type="email" class="form-control inputsRegistro" id="email" name="email" placeholder="Ingresar Correo">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                   <span><strong>*Contraseña:</strong></span>
+                   <input type="password" class="form-control inputsRegistro" id="password" name="password" placeholder="contraseña">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                   <span><strong>*Taller:</strong></span>
+                   <input type="text" class="form-control inputsRegistro" id="taller" name="taller" placeholder="Ingresar Taller">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                   <span><strong>Teléfono:</strong></span>
+                   <input type="number" class="form-control inputsRegistro" id="telefono" name="telefono" placeholder="Ingresar Teléfono">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                   <span><strong>*Celular:</strong></span>
+                   <input type="tel"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="form-control inputsRegistro" id="celular" name="celular" placeholder="Ingresar Celular">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span><strong>*Direccion:</strong></span>
+                    <small>Nota:Ingresar la dirección y elegir en el menu desplegable la dirección correcta, automaticamente se llenarán los campos faltantes.</small>
+                    <input class="form-control inputsRegistro" id="autocomplete" placeholder="Ingrese su dirección" type="text">
+                </div>
+              
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span><strong>*Calle y Numero:</strong></span>
+                    <input class="form-control inputsRegistro" id="route" placeholder="Número Interior">
+                      <br>
+                    <input class="form-control inputsRegistro" id="street_number" placeholder="Calle">
+             
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span><strong>*Colonia:</strong></span>
+                    <input class="form-control inputsRegistro" id="sublocality_level_1" placeholder="Colonia">
+                
+                </div>
+
+                 <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span><strong>*Estado:</strong></span>
+                    <input class="form-control inputsRegistro" id="administrative_area_level_1" placeholder="Estado">
+               
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span><strong>*Ciudad:</strong></span>
+                    <input class="form-control inputsRegistro" id="locality" placeholder="Ciudad">
+                  
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <span><strong>*CP:</strong></span>
+                  <input class="form-control inputsRegistro" id="postal_code" placeholder="Código Postal">
+                 
+                </div>
+
+   
+                
+            </form>
+            
+        </div>          
+                
+                <br>
+                 <div class="col-lg-6 col-md-6 col-sm-6" style="margin-bottom: 100px;">
+                    <button type="button" class="btn btn-success buttons" id="signup" name="signup">Registrar</button>
+                </div>
+                
+        
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_dlGznsov-uJDQUmmsHIR_vsA103iiLc&signed_in=true&libraries=places"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

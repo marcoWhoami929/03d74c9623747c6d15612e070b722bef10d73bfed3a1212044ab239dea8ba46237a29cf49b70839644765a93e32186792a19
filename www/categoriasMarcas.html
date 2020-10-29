@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.swiper.css"/>
+    
+    <title>DEKKERAPP</title>
+</head>
+<body>
+    <div class="container col-lg-12">
+      <div class="row">
+        <div class="divBienvenidaMarcas">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+            <a href="index.html"><center><img src="img/logo-blanco.png" alt="" id="img2"></center></a> 
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida" style="">
+
+            <div class="bar bar-header" id="btnRegresar" style="margin-top: 2%; margin-left: -10px;">
+              <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a>   
+            </div>
+            <div style="width:5%;float: left;margin-top: 12px;margin-left: 5px;">
+              <a href="searchProductos.html"><i class="fa fa-search" href="searchProductos.html" aria-hidden="true" style="color: white;font-size: 20px"></i></a>
+            </div>
+            <div style="">
+              <center><h5></h5></center>
+                <a href="procesoSolicitud.html"><div id="carroCompras" class="animated shake"style="margin-top: -42px"><img src="img/carrito-compras.png" alt="" width="100%"></div></a>
+            </div>
+          </div>
+        </div>
+            
+        <div style="margin-top: 50%">
+            <!---------------------------------------------------------------------------------------------------->
+            <!--
+            <div class="col-lg-12">
+                <div class="swiper-container main-slider loading">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/1.jpeg)">
+                    <img src="img/slider/1.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/2.jpeg)">
+                    <img src="img/slider/2.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/3.jpeg)">
+                    <img src="img/slider/3.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/4.jpeg)">
+                    <img src="img/slider/4.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/5.jpeg)">
+                    <img src="img/slider/5.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/6.jpeg)">
+                    <img src="img/slider/6.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/7.jpeg)">
+                    <img src="img/slider/7.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/8.jpeg)">
+                    <img src="img/slider/8.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-button-prev swiper-button-white"></div>
+              <div class="swiper-button-next swiper-button-white"></div>
+            </div>
+
+
+            <div class="swiper-container nav-slider loading">
+              <div class="swiper-wrapper" role="navigation">
+                
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/1.jpeg)">
+                    <img src="img/slider/1.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/2.jpeg)">
+                    <img src="img/slider/2.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/3.jpeg)">
+                    <img src="img/slider/3.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/4.jpeg)">
+                    <img src="img/slider/4.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/5.jpeg)">
+                    <img src="img/slider/5.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/6.jpeg)">
+                    <img src="img/slider/6.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/7.jpeg)">
+                    <img src="img/slider/7.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+                
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url(img/slider/8.jpeg)">
+                    <img src="img/slider/8.jpeg" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          -->
+            <!---------------------------------------------------------------------------------------------------->
+            <div class="col-lg-12 col-md-12 col-sm-12" style="">
+               
+                
+                <table class="tableLsMarcas" id="tableLsMarcas">
+                    <div class="container col-lg-12 col-md-12 col-sm-12">
+                        <!-- <div class="row" id="contenedor">
+                           
+                            
+                        </div> -->
+                        <div class="row" id="contenedor2">
+                            <div class="col-lg-6 col-md-6 col-sm-6" id="cont2">
+                                <input type="button" class="btn btn-success btnMasVendido" id="btnMasVendido" value="Lo Más Vendido" style="width:100%">
+                                
+                                <a href="masVendido.html" class="btnMasVendido" id="btnMasVendido2"><center><img src="img/masVendido.png" alt="" style="width: 100%"></center></a>
+
+                            </div>
+                           <div class="col-lg-6 col-md-6 col-sm-6" id="cont2">
+                                <input type="button" class="btn btn-success btnVerSubcategoria" id="btnMisFavoritos" value="Mis Favoritos" style="width:100%">
+                                
+                               
+                                <a href="" class="btnVerSubcategoria" id="btnMisFavoritos2"><center><img src="img/favoritos.png" alt="" style="width: 100%"></center></a>
+
+                            </div>
+                     
+                            
+                        </div>
+                        
+                    </div>
+                  
+                
+                </table>
+                <!--<tr>
+                    <th><a href="subcategoriaSherwin.html"><input type="button" class="btn btn-success" value="SERWIN" style="width:100%" ></a></th>
+                    <th><a href="subcategoria3M.html"><input type="button" class="btn btn-success" value="3M" style="width:100%"></a></th>
+                </tr>
+                <tr>
+                    <td><a href="subcategoriaSherwin.html"><center><img src="img/sherwin.png" alt="" style="width: 55%" align="center"></center></a></td>
+                    <td><a href="subcategoria3M.html"><center><img src="img/3m.png" alt="" style="width: 85%" align="center"></center></a></td>
+                </tr>
+                <tr>
+                    <th><a href="subcategoriaGoni.html"><input type="button" class="btn btn-success" style="width: 100%;" value="GONI"></a></th>
+                    <th><a href="subcategoriaFandeli.html"><input type="button" class="btn btn-success" style="width: 100%" value="FANDELI"></a></th>
+                </tr>
+                <tr>
+                    <td><a href="subcategoriaGoni.html"><center><img src="img/goni.jpg" alt="" style="width: 100%"></center></a></td>
+                    <td><a href="subcategoriaFandeli.html"><center><img src="img/fandeli.jpg" alt="" style="width: 100%"></center></a></td>
+                </tr>
+                <tr>
+                    <th><a href="subcategoriaComplementos.html"><input type="button" class="btn btn-success" style="width: 100%;" value="COMPLEMENTOS"></a></th>
+                </tr>
+                <tr>
+                    <td><a href="subcategoriaComplementos.html"><center><img src="img/logo.png" alt="" style="width: 80%"></center></td>
+                </tr>-->
+        
+        </div>
+      </div>
+        <div class="container col-lg-12 col-md-12 col-sm-12" id="divTableProductos">
+          <h4 style="color: black">Lo más vendido</h4>
+          <hr>
+          <small>Nota: Deslizar a la izquierda para visualizar más productos.</small>
+          <div class="row" id="productos" style="margin-bottom: 50px; overflow-x: auto;white-space: nowrap;">
+            
+          </div>
+
+        </div>
+        <br><br>
+        <div class=" col-lg-12 col-md-12 col-sm-12" id="divTableMasBuscado">
+          <h4 style="color: black">Lo más buscado</h4>
+          <hr>
+          <small>Nota: Deslizar a la izquierda para visualizar más productos.</small>
+          <div class="row" id="productosMasBuscados" style="margin-bottom: 50px; overflow-x: auto;white-space: nowrap;">
+            
+          </div>
+
+        </div>   
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <!------------------------------ ESCRIPS PARA EL SLIDER ------------------------------------->
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/swiper.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script> -->
+    <!------------------------------------------------------------------------------------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <!-- <script>
+        $(document).ready(function(){
+            var json = localStorage.arregloMarcas;
+            var types = JSON.parse(json);
+
+            $("#contenedor").html("");
+            for (x = 0; x < types.length; x++) {
+                var div = `<div class="col-lg-6 col-md-6 col-sm-6" id="cont1">
+                                <input type="button" class="btn btn-success btnVerSubcategoria" value="`+types[x].nombre+`" style="width:100%" idCategoria = "`+types[x].idMarca+`">
+                                
+                               
+                                <a href="" class="btnVerSubcategoria" idCategoria = "`+types[x].idMarca+`"><img src="`+types[x].rutaFoto+`" alt="" ></a>
+
+                            </div>`;
+
+                $("#contenedor").append(div);
+            }
+
+        });
+    </script> -->
+    <script>
+        $(document).ready(function(){
+            var json = localStorage.arregloMasVendido;
+            var types = JSON.parse(json);
+
+            var idClient = localStorage.idCliente;
+
+            for (x = 0; x < types.length; x++) {
+
+            var precio = types[x].precio * 1;
+            var descuento = types[x].descuento * 1;
+            var precioF = (precio * descuento)/100;
+
+            var idProductoF = types[x].idProducto;
+            var idClientF = types[x].idCliente;
+            //console.log(idClientF);
+               if(idClient == idClientF || idClientF === null){
+
+                if (types[x].favorito == 1 && idClient == idClientF) {   
+                
+                  if (descuento != 0) {
+                    
+                    var precioDescuento = precio - precioF;
+                     var tr = `
+                    <table id="tableProductos">
+                      <tr>
+                        <td>
+                        <div id="svgOff" >
+                            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                          <center>
+                              <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                          </center>
+                          <p style="margin-left:10%;width:90%;height:25px;">
+                            <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                          </p>
+
+                          <p style="margin-left:10%">
+                          <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                          <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                          </p>
+                          <button type="button" id="btnCorazonRed" class="btnCorazonRed" idProductoF ="`+types[x].idMvendido+`"><i class="fas fa-heart"></i></button>
+                          <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                          <button type="button" class="btn btn-success btnAgregaraCarro" id="btnAgregaraCarro" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                          </td>
+                     </tr>
+                    </table>`;
+                  }else{
+                    var precioDescuento = precio;
+                     var tr = `
+                    <table id="tableProductos">
+                      <tr>
+                        <td>
+                        <div id="svgOff" style="display: none">
+                            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                          <center>
+                              <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                          </center>
+                          <p style="margin-left:10%;width:90%;height:25px;">
+                            <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                          </p>
+
+                          <p style="margin-left:10%">
+                          <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                          <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                          </p>
+                          <button type="button" id="btnCorazonRed" class="btnCorazonRed" idProductoF ="`+types[x].idMvendido+`"><i class="fas fa-heart"></i></button>
+                          <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                          <button type="button" class="btn btn-success btnAgregaraCarro" id="btnAgregaraCarro" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                          </td>
+                     </tr>
+                    </table>`;
+                  }
+
+                }else{
+                   if (descuento != 0) {
+                    var precioDescuento = precio - precioF;
+                    var tr = `
+                    <table id="tableProductos">
+                      <tr>
+                        <td>
+                        <div id="svgOff" >
+                            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                          <center>
+                              <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                          </center>
+                          <p style="margin-left:10%;width:90%;height:25px;">
+                            <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                          </p>
+
+                          <p style="margin-left:10%">
+                          <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                          <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                          </p>
+                          <button type="button" id="btnCorazon" class="btnCorazon" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`"><i class="fas fa-heart"></i></button>
+
+                          <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                         <button type="button" class="btn btn-success btnAgregaraCarro" id="btnAgregaraCarro" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+
+                        </td>    
+                     </tr>
+                    </table>`;
+                  }else{
+                    var precioDescuento = precio;
+                    var tr = `
+                    <table id="tableProductos">
+                      <tr>
+                        <td>
+                        <div id="svgOff" style="display: none">
+                            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                          <center>
+                              <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                          </center>
+                          <p style="margin-left:10%;width:90%;height:25px;">
+                            <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                          </p>
+
+                          <p style="margin-left:10%">
+                          <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                          <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                          </p>
+                          <button type="button" id="btnCorazon" class="btnCorazon" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`"><i class="fas fa-heart"></i></button>
+
+                          <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                         <button type="button" class="btn btn-success btnAgregaraCarro" id="btnAgregaraCarro" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+
+                        </td>    
+                     </tr>
+                    </table>`;
+                  }
+              }
+
+               }
+               
+                $("#productos").append(tr);
+            }
+        });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var json = localStorage.arregloMasBuscado;
+        var types = JSON.parse(json);
+        var idCliente = localStorage.idCliente;
+            //$("#productosMasBuscados").html("");
+            
+        for (x = 0; x < types.length; x++) {
+          var precio = types[x].precio * 1;
+          var descuento = types[x].descuento * 1;
+          var precioF = (precio * descuento)/100;
+          var idClienteF = types[x].idCliente;
+
+          if(idCliente == idClienteF || idClienteF === null){
+
+              if (types[x].favorito == 1 && idClienteF == idCliente) {
+
+              if (descuento != 0) {
+                var precioDescuento = precio - precioF;
+                var tr = `
+                <table id="tableProductosBus">
+                  <tr>
+                    <td>
+                      <div id="svgOff">
+                        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                          <!--- Etiqueta Oferta de Promoción -->
+                          <g>
+                            <!--- Etiqueta -->
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                            <!--- Texto -->
+                            <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                          </g>
+                          <!--- Etiqueta Superior triangular -->
+                          <g>  
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                            <!--- Texto triángulo -->  
+                            <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                            <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                          </g>   
+                        </svg>
+                      </div>
+
+                      <center>
+                        <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                      </center>
+                      <p style="margin-left:10%;width:90%;height:25px;">
+                        <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                      </p>
+
+                      <p style="margin-left:10%">
+                        <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                        <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                      </p>
+                      <button type="button" id="btnCorazonRed" class="btnCorazonRed" idProductoF ="`+types[x].idMvendido+`"><i class="fas fa-heart"></i></button>
+                      <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                      <button type="button" class="btn btn-success btnAgregaraCarroBus" id="btnAgregaraCarroBus" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                    </td>
+                  </tr>
+                </table>`;
+              }else{
+                var precioDescuento = precio;
+                var tr = `
+                  <table id="tableProductosBus">
+                    <tr>
+                      <td>
+                        <div id="svgOff" style="display:none">
+                          <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                            <g>
+                              <!--- Etiqueta -->
+                              <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                              <!--- Texto -->
+                              <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                            </g>
+                            <!--- Etiqueta Superior triangular -->
+                            <g>  
+                              <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                              <!--- Texto triángulo -->  
+                              <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                              <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                            </g>   
+                          </svg>
+                        </div>
+
+                        <center>
+                          <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                        </center>
+                        <p style="margin-left:10%;width:90%;height:25px;">
+                          <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                        </p>
+
+                        <p style="margin-left:10%">
+                          <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                          <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                        </p>
+                        <button type="button" id="btnCorazonRed" class="btnCorazonRed" idProductoF ="`+types[x].idMvendido+`"><i class="fas fa-heart"></i></button>
+                        <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                        <button type="button" class="btn btn-success btnAgregaraCarroBus" id="btnAgregaraCarroBus" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                      </td>
+                    </tr>
+                  </table>`;
+              }
+            }else{
+
+              if (descuento != 0) {
+                var precioDescuento = precio - precioF;
+                var tr = `
+                <table id="tableProductosBus">
+                  <tr>
+                    <td>
+                      <div id="svgOff">
+                        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                          <!--- Etiqueta Oferta de Promoción -->
+                          <g>
+                            <!--- Etiqueta -->
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                            <!--- Texto -->
+                            <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                          </g>
+                          <!--- Etiqueta Superior triangular -->
+                          <g>  
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                            <!--- Texto triángulo -->  
+                            <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                            <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                          </g>   
+                        </svg>
+                      </div>
+                      <center>
+                        <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                      </center>
+                      <p style="margin-left:10%;width:90%;height:25px;">
+                        <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                      </p>
+
+                      <p style="margin-left:10%">
+                        <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                        <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                      </p>
+                      <button type="button" id="btnCorazon" class="btnCorazon" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`"><i class="fas fa-heart"></i></button>
+
+                      <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                      <button type="button" class="btn btn-success btnAgregaraCarroBus" id="btnAgregaraCarroBus" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                    </td>    
+                  </tr>
+                </table>`;
+              }else{
+                var precioDescuento = precio;
+                var tr = `
+                <table id="tableProductosBus">
+                  <tr>
+                    <td>
+                      <div id="svgOff" style="display:none;">
+                        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                          <!--- Etiqueta Oferta de Promoción -->
+                          <g>
+                            <!--- Etiqueta -->
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                            <!--- Texto -->
+                            <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                          </g>
+                          <!--- Etiqueta Superior triangular -->
+                          <g>  
+                            <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                            <!--- Texto triángulo -->  
+                            <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                            <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                          </g>   
+                        </svg>
+                      </div>
+                      <center>
+                        <img src="`+types[x].foto+`" alt="" style="width:30%; height:10%;">
+                      </center>
+                      <p style="margin-left:10%;width:90%;height:25px;">
+                        <span type="text" id="nameProductoS">`+types[x].descripcion+`</span>
+                      </p>
+
+                      <p style="margin-left:10%">
+                        <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                        <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                      </p>
+                      <button type="button" id="btnCorazon" class="btnCorazon" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`"><i class="fas fa-heart"></i></button>
+
+                      <input type="hidden" name="cantidadProd[]" valor="1" maxlength="2" max="50" size="1" id="cantidadProd" style="" class="" placeholder="" value="1"/>
+
+                      <button type="button" class="btn btn-success btnAgregaraCarroBus" id="btnAgregaraCarroBus" idProducto ="`+types[x].idMvendido+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precio+`" unidadMedida ="`+types[x].unidadMedida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+descuento+`">Agregar <i class="fas fa-shopping-cart"></i></button>
+                    </td>    
+                  </tr>
+                </table>`;
+              }
+            }
+          }
+
+            
+          $("#productosMasBuscados").append(tr);
+        }
+      });
+    </script>
+    <style type="text/css">
+      hr {
+          display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 1px;
+        }
+    </style>
+</body>
+
+</html>

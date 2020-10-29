@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+
+
+
+    
+    <title>DEKKERAPP</title>
+</head>
+
+<body>
+    <div class="container col-lg-12" id="containerPrincipal">
+      <div class="row">
+        <div class="divBienvenidaMarcas">
+          
+          <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+            <a href="index.html"><center><img src="img/logo-blanco.png" alt="" id="img2"></center></a>   
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida">
+            <div class="bar bar-header" id="btnRegresar" style="margin-top: 2%; margin-left: -10px;">
+              <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a>   
+            </div>
+            <div style="width:5%;float: left;margin-top: 12px;margin-left: 5px;">
+              <a href="searchProductos.html"><i class="fa fa-search" href="searchProductos.html" aria-hidden="true" style="color: white;font-size: 20px"></i></a>
+            </div>
+            <br>
+            <div style="margin-top: -20px;">
+              <h4 style="margin-left: 20%;">SOLICITUD DE PRODUCTOS</h4>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:45%">
+
+             <div class="col-lg-12 col-md-12 col-sm-12">
+                
+              <span>Sucursal Elegida: </span><label id="sucursalElegida" style="font-size: 20px"></label>
+             </div>
+             <br>
+             <div class="col-lg-12 col-md-12 col-sm-12">
+              <button type="button" class="btn btn-success buttons" id="btnProductos">Elegir Productos</button>
+               
+             </div>
+             <br>
+             <div class="col-lg-6 col-md-6 col-sm-6 ">
+              <span><strong>Indicaciones Adicionales (Opcional):</strong></span>
+              <textarea rows="4" cols="100" class="form-control inputsGeneral" id="observacionesProductos" name="observacionesProductos" placeholder="Ingresar observaciones"></textarea>  
+            </div>
+         
+            <br>
+            <div class="col-lg-12 col-md-12 col-sm-12 table1" id="table1">
+              <h4 style="color: black">Mi Carrito<i class="fa fa-shopping-cart" aria-hidden="true"></i></h4>
+
+             <!--  <table class="productosCarrito" id="productosCarrito">
+                    <div class="container col-lg-12 col-md-12 col-sm-12">
+                        <div class="row" id="tableCarrito">
+
+                        </div>
+                    </div>
+                </table> -->
+              
+              <table class="table tablaLista" id="tablaLista" cellspacing="0" cellpadding="0">
+
+                  <tbody id="cuerpo">
+                  </tbody>
+                </table>
+
+                <strong>Elegir Forma de Pago</strong>
+                <select class="form-control" id="formaDePago" name='formaDePago' required>
+                  <option value="EFECTIVO">EFECTIVO</option>
+                  <option value="TARJETA DE DÉBITO">TARJETA DE DÉBITO</option>
+                  <option value="TARJETA DE CRÉDITO">TARJETA DE CRÉDITO</option>
+                  <option value="TRANSFERENCIA ELECTRÓNICA">TRANSFERENCIA ELECTRÓNICA</option>
+                </select>
+                 <br>           
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12" id="divCarroPlus" style="display: none">
+              <center>
+                <strong style="font-size: 13px;color:black;font: small-caps 100%/200% serif;">Aún No Tienes Productos Agregados <i class="far fa-sad-tear" style="width: 8%; height: 8%;"></i></strong>
+                <i class="fas fa-shopping-cart" style="width: 50%; height: 50%"></i>
+              </center>
+              
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12" id="divTablaTotales">
+                   <table style="width: 100%; border-right: 80px #fff solid;">
+                    <tr>
+                      <td colspan="2" style="width: 100%;font-size:8px;color:black;font: small-caps 100%/200% serif;">
+                        <strong id="nArticulos"></strong><b>Articulo(s)</b>
+                      </td>
+                    </tr>
+                     <tr style="height: 10%">
+                       <td style="background-color: #fff;">
+                         <p><strong style="font-size: 14px;">Subtotal:</strong></p>
+                         <p style="margin-top: -14px"><strong style="font-size: 12px;">Descuento:</strong></p>
+
+                       </td>
+                       <td style="background-color: #fff;text-align: right;">
+                        <p><input type="text" name="subTotal" id="subTotal" style="background-color: transparent;text-align: right;border:none;font-size: 14px;color: #013ca6;" readonly></strong></p>
+                        <p style="margin-top: -14px"><input type="text" name="totalDescuento" id="totalDescuento" style="background-color: transparent;text-align: right;border:none;font-size: 13px;color: #013ca6;" value=" 0.00" readonly></strong></p>
+                       </td>
+                     </tr>
+                     <tr style="height: 10%">
+                       <td style="background-color: #fff; width: 150px;color:black;">
+                         <p><strong style="font-size: 12px; color: black; width: 150px">Total A Pagar:</strong></p>
+                       </td>
+                       <td style="background-color: #fff;text-align: right;">
+                        <input type="text" name="totalCosto" id="totalCosto" style="width: 50%;text-align: right;border:none;font-size: 15px;color: #013ca6;font-weight: bold" readonly>
+                         <!-- <p><strong style="font-size: 15px;color: #013ca6;" id="totalCosto"></strong></p> -->
+                         <!-- <p><strong style="font-size: 15px;color: #013ca6;" id="totalT"></strong></p> -->
+                       </td>
+                     </tr>
+                   </table>
+                 </div>
+                  <br><br><br>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12" style="" id="divInferior">
+              
+              <table style="width: 100%; background-color: #EAEDED; ">
+                <thead style="border-bottom:0px #fff solid;">
+                  <th colspan="2" >
+                    <small>*Todos nuestros precios incluyen IVA.</small>
+                     
+                  </th>
+                </thead>
+                <tr >
+                  <td style="width: 50%; background-color: #EAEDED;">
+                    <strong style="font-size:12px;color:black;"><b>Total:</b></strong>
+                   <!--  <h4 style="color: black;font-size: 13px;color: black;"></h4> -->
+                    <!-- <strong style="font-size: 13px;color:black" id="totalCosto2"></strong> -->
+                    <strong><input type="text" name="totalCosto2" id="totalCosto2" style="background-color: transparent;text-align: left;border:none;font-size: 18px;color: black;" readonly></strong>
+                  </td>
+                  <td style="width: 50%;background-color: #EAEDED;">
+                    <center>
+                      <button type="button" class="btn btn-success buttonContinuar" id="formProcesarSolicitud" >Continuar</button>
+                    </center>
+                    
+                  </td>
+                </tr>
+              </table>
+              
+            </div> 
+            <br>
+            <br>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script>
+
+      $(document).ready(function(){
+           var observacionesSolicitud = localStorage.getItem('observacionesSolicitud');
+           var observacionesProductos = localStorage.getItem('observacionesProductos');
+          if (observacionesSolicitud != "" && observacionesProductos == "") {
+           
+            document.getElementById("observacionesProductos").value = observacionesSolicitud;
+          }else{
+            
+            var observacionesProductos = localStorage.getItem('observacionesProductos');
+            document.getElementById("observacionesProductos").value = observacionesProductos;
+          }
+
+        var json = localStorage.ProductosAdd;
+                            
+        //var types = JSON.parse(array);
+        var types = JSON.parse(json);
+                            
+        $("#cuerpo").on("click", ".btnEliminarP", function() {
+          var idProductos = $(this).attr("idProductos");
+          swal({
+            title: "Eliminar",
+            text: "¿Esta Seguro de Eliminar el Producto?",
+            icon: "warning",
+            buttons: true,
+            cancelButtonText: "No eliminar",
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              var json = localStorage.ProductosAdd;
+              var types = JSON.parse(json);
+
+              for (var i = 0; i < types.length; i++) {
+                if (types[i].idProducto==idProductos) {
+                  types.splice(i, 1);
+                  localStorage.ProductosAdd = JSON.stringify(types);   
+                  break;
+                }
+              }
+              window.location.href = "procesoSolicitud.html";
+              swal("Ha Sido Eliminado", {
+                icon: "success",
+              });
+            }
+          });                         
+        });
+                            
+        $("#cuerpo").html("");
+                                
+        for(let x=0; x<types.length; x++) {
+                                  
+          var precio = types[x].precioProducto * 1;
+          var descuentoOrg = types[x].descuento * 1;
+          
+          var descuentoP = types[x].precioDescuento * types[x].cantidad; 
+          var precioF = (precio * descuentoP)/100;
+
+          var precioConDescuento = precio - types[x].precioDescuento; 
+          var precioMultiplicado = precioConDescuento * types[x].cantidad;
+
+          var precioOriginalProducto = precio * types[x].cantidad;
+                                    
+          if (descuentoOrg != 0) {
+            var tr = `
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <center>
+                    <img src="`+types[x].foto+`" style="width:60%; height:40%; ">
+                  </center>
+                </td>
+                <td colspan="3" style="width="100%" font-size:8px;color:black;font: small-caps 100%/200% serif;">
+                  <b>`+types[x].descripcion+`</b>
+                </td>
+                <td rowspan="2" style="width:30%; font-size: 11px;color: #013ca6; text-align:right; border-right:1px transparent solid;">
+                <input type="text" class="precioTx" name="precioTx[]" id="precioTx`+x+`" style="text-align:left;width:100%;float:left; border:none;background:transparent;font-size:15px;color:red;text-decoration:line-through;"  readonly value="$ `+precioOriginalProducto.toFixed(2)+`">
+                <input type="hidden" class="precioOriginalProducto" name="precioOriginalProducto[]" id="precioOriginalProducto`+x+`" style=""  readonly value="`+precioOriginalProducto.toFixed(2)+`"/>
+                  
+                  <input type="hidden" name="precioInicial[]" id="precioInicial`+x+`" readonly class="" value="`+precioConDescuento.toFixed(2)+`"/>
+                  <input type="hidden" name="precioOrg[]" id="precioOrg`+x+`" readonly class="" value="`+precio.toFixed(2)+`"/>
+                  <input type="hidden" name="descuentoOrg[]" id="descuentoOrg`+x+`" readonly class="" value="`+descuentoOrg+`"/>
+
+                  <input type="text" class="precioP" name="precioP[]" id="precioP`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value="$ `+precioMultiplicado.toFixed(2)+`"/>
+
+                  <input type="hidden" class="precioSnDescuento" name="precioSnDescuento[]" id="precioSnDescuento`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value=""/>
+                  <input type="hidden" class="totalDescPrecio" name="totalDescPrecio[]" id="totalDescPrecio`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value="`+descuentoP.toFixed(2)+`"/>
+                </td>
+                <td rowspan="2">
+                  <center>
+                    <button type="button" class="btn btn-success btnEliminarP" id="btnEliminarP" idProductos= "`+types[x].idProducto+`"><i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button class="btn btn-info disminuir" type = "button" style="width:100%;height:28px;"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </td>
+                <td >
+                  <input type="text" name="cantidadN[]" valor="1" maxlength="2" max="50" size="1" id="cantidadN" style="width="100%" class="" placeholder="" value="`+types[x].cantidad+`" idGeneral="`+x+`"/>
+                  <input type="hidden"  name="idProducto[]" style="text-align:right;width:50px;float:right; border:none;background:transparent;font-size:14px;" readonly value="`+types[x].idProducto+`"/>
+                </td>
+                <td>
+                  <button class="btn btn-info aumentar" type = "button" style="width:100%;height:28px;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>`;
+          }else{
+            var tr = `
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <center>
+                    <img src="`+types[x].foto+`" style="width:60%; height:40%; ">
+                  </center>
+                </td>
+                <td colspan="3" style="width="100%" font-size:8px;color:black;font: small-caps 100%/200% serif;">
+                  <b>`+types[x].descripcion+`</b>
+                </td>
+                <td rowspan="2" style="width:30%; font-size: 11px;color: #013ca6; text-align:right; border-right:1px transparent solid;">
+                <input type="hidden" class="precioTx" name="precioTx[]" id="precioTx`+x+`" style="text-align:left;width:100%;float:left; border:none;background:transparent;font-size:12px;color:red;text-decoration:line-through;" readonly value="$ `+precioOriginalProducto.toFixed(2)+`"/>
+                <input type="hidden" class="precioOriginalProducto" name="precioOriginalProducto[]" id="precioOriginalProducto`+x+`" style=""  readonly value="`+precioOriginalProducto.toFixed(2)+`"/>
+                  
+                  <input type="hidden" name="precioInicial[]" id="precioInicial`+x+`" readonly class="" value="`+precioConDescuento.toFixed(2)+`"/>
+                  <input type="hidden" name="precioOrg[]" id="precioOrg`+x+`" readonly class="" value="`+precio.toFixed(2)+`"/>
+                  <input type="hidden" name="descuentoOrg[]" id="descuentoOrg`+x+`" readonly class="" value="`+descuentoOrg+`"/>
+
+                  <input type="text" class="precioP" name="precioP[]" id="precioP`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value="$ `+precioMultiplicado.toFixed(2)+`"/>
+
+                  <input type="hidden" class="precioSnDescuento" name="precioSnDescuento[]" id="precioSnDescuento`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value=""/>
+                 <input type="hidden" class="totalDescPrecio" name="totalDescPrecio[]" id="totalDescPrecio`+x+`" style="text-align:right;width:55px;float:right; border:none;background:transparent;font-size:14px;" readonly value="`+descuentoP.toFixed(2)+`"/>
+                </td>
+                <td rowspan="2">
+                  <center>
+                    <button type="button" class="btn btn-success btnEliminarP" id="btnEliminarP" idProductos= "`+types[x].idProducto+`"><i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button class="btn btn-info disminuir" type = "button" style="width:100%;height:28px;"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </td>
+                <td >
+                  <input type="text" name="cantidadN[]" valor="1" maxlength="2" max="50" size="1" id="cantidadN" style="width="100%" class="" placeholder="" value="`+types[x].cantidad+`" idGeneral="`+x+`"/>
+                  <input type="hidden"  name="idProducto[]" style="text-align:right;width:50px;float:right; border:none;background:transparent;font-size:14px;" readonly value="`+types[x].idProducto+`"/>
+                </td>
+                <td>
+                  <button class="btn btn-info aumentar" type = "button" style="width:100%;height:28px;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>`;
+          }
+          $("#cuerpo").append(tr);
+        }
+        var nColumnas = $("#cuerpo tbody").length;
+        $("#nArticulos").html(nColumnas+" ");
+
+        var total = 0;
+        types.forEach(function (obj) {
+          total += parseInt(obj.cantidad);
+        });
+        var totalCosto = 0;
+         $('input[name="precioOriginalProducto[]"]').each(function() {
+              if (!isNaN($(this).val())) {
+                  totalCosto += parseFloat($(this).val()); 
+              }
+          });
+        var totalIva = 0;
+        types.forEach(function(obj) {
+          totalIva += parseFloat(obj.precioProducto*obj.cantidad*0.16);
+        });
+
+        var subTotal = 0;
+     
+        $('input[name="precioOriginalProducto[]"]').each(function() {
+              if (!isNaN($(this).val())) {
+                  subTotal += parseFloat($(this).val()); 
+              }
+          });
+        var totalX = subTotal;
+
+        var totalDes = 0;
+       
+        $('input[name="totalDescPrecio[]"]').each(function() {
+              if (!isNaN($(this).val())) {
+                  totalDes += parseFloat($(this).val()); 
+              }
+          });
+
+        var totalDescuento = totalDes;
+
+        var totalDescPrec = 0;
+        $('input[name="totalDescPrecio[]"]').each(function() {
+              if (!isNaN($(this).val())) {
+                  totalDescPrec += parseFloat($(this).val()); 
+              }
+          });
+
+        var ids = 0;
+        types.forEach(function(obj) {
+          ids += parseFloat(obj.idProducto);
+        });
+        /**/
+
+
+        var costoFinal = totalCosto - totalDescuento;
+        $("#totalUnidades").html(total);
+        $("#totalIva").html("$" + " " +totalIva.toFixed(2));
+
+        $("#totalCosto").val("$" + " " +costoFinal.toFixed(2));
+        $("#totalCosto2").val("$" + " " +costoFinal.toFixed(2));
+
+        $("#subTotal").val("$" + " " + totalX.toFixed(2));
+        $("#totalDescuento").val("$" + " " +totalDescPrec.toFixed(2));
+
+        if (total == 0) {
+          var div1 = document.getElementById("divTablaTotales");
+          div1.style.display = "none";
+          var div2 = document.getElementById("table1");
+          div2.style.display = "none";
+
+          var divCarroVacio = document.getElementById("divCarroPlus");
+          divCarroPlus.style.display = "";
+        }
+      });
+
+      $("#tablaLista").on("click", ".aumentar", function() {
+        var parent = $(this).parent().parent();
+        var value = parseInt(parent.find('input[name="cantidadN[]"]').val(), 10);
+        var idFila = parent.find('input[name="cantidadN[]"]').attr("idGeneral");
+
+        value = isNaN(value) ? 0 : value;
+                
+        if(value<50){
+          value++;
+                    
+          parent.find('input[name="cantidadN[]"]').val(value);
+                    /********actualizar localstorage al aumentar cantidad*/
+          var arregloProductos = localStorage.ProductosAdd.split(',');
+          var idProducto = parent.find('input[name="idProducto[]"]').val();
+                   
+          var types = JSON.parse(arregloProductos);
+          for (var i = 0; i < types.length; i++) {
+            var id = types[i].idProducto;
+            if (id === idProducto) {
+              var cantidadProducto =  value;
+
+              delete types[i].cantidad;
+              localStorage.ProductosAdd = JSON.stringify(types);
+
+              types[i].cantidad = cantidadProducto;
+              localStorage.ProductosAdd = JSON.stringify(types);
+                        
+            }else{
+            }
+                        
+          }
+          /********actualizar localstorage al aumentar cantidad*/
+         
+          var precioProducto = $("#precioInicial"+idFila+"").val();
+          var precioOriginal = $("#precioOrg"+idFila+"").val();
+          var descuentoInicial = $("#descuentoOrg"+idFila+"").val();   
+          var unidadesTotales = localStorage.getItem("unidades");
+
+          if (unidadesTotales == null) {
+
+            localStorage.setItem("unidades",value);
+            var precioTotal = value * precioProducto;
+            var precioSinDescuento = value * precioOriginal;
+
+            $("#precioP"+idFila+"").val("$"+" "+precioTotal.toFixed(2));
+            $("#precioTx"+idFila+"").val("$"+" "+precioSinDescuento.toFixed(2));
+
+            var precioOriginalF = value * precioOriginal;
+            $("#precioSnDescuento"+idFila+"").val(precioOriginalF.toFixed(2));
+
+            var totalDesc = (precioOriginalF*descuentoInicial)/100;
+            $("#totalDescPrecio"+idFila+"").val(totalDesc.toFixed(2));
+            
+
+          }else{
+            var totalUnidades = value;
+            localStorage.setItem("unidades",totalUnidades);
+
+            var precioTotal = totalUnidades * precioProducto;
+            var precioSinDescuento = totalUnidades * precioOriginal;
+            $("#precioP"+idFila+"").val("$"+" "+precioTotal.toFixed(2));
+            $("#precioTx"+idFila+"").val("$"+" "+precioSinDescuento.toFixed(2));
+
+            var precioOriginalF = totalUnidades * precioOriginal;
+            $("#precioSnDescuento"+idFila+"").val(precioOriginalF.toFixed(2));
+
+            var totalDesc = (precioOriginalF*descuentoInicial)/100;
+            $("#totalDescPrecio"+idFila+"").val(totalDesc.toFixed(2));
+       
+            
+          }
+        }
+      });
+      $("#observacionesProductos").blur(function(){
+
+         var observacionesProductos = $("#observacionesProductos").val();
+          
+          localStorage.setItem("observacionesProductos",observacionesProductos);
+
+      });
+      function suma() {
+          var observacionesProductos = $("#observacionesProductos").val();
+          
+          localStorage.setItem("observacionesProductos",observacionesProductos);
+
+          //var precio = $('input[name="precioP[]"]').val();
+          
+          var totalCosto =  0;
+          $('input[name="precioP[]"]').each(function() {
+             var valor = $(this).val().replace("$ ","");
+              if (!isNaN(valor)) {
+                  totalCosto += parseFloat(valor);
+              }
+          });
+          $('#totalCosto').val("$" + " " +totalCosto.toFixed(2));
+          $('#totalCosto2').val("$" + " " +totalCosto.toFixed(2));
+
+          var totalPrecioSnDesc = 0;
+          $('input[name="precioTx[]"]').each(function() {
+              var valor = $(this).val().replace("$ ","");
+              
+              if (!isNaN(valor)) {
+
+                  totalPrecioSnDesc += parseFloat(valor);
+                  
+
+              }
+          });
+
+          $('#subTotal').val("$" + " " +totalPrecioSnDesc.toFixed(2));
+
+          var totalDescPrec = 0;
+          $('input[name="totalDescPrecio[]"]').each(function() {
+             var valor = $(this).val().replace("$ ","");
+              if (!isNaN(valor)) {
+                  totalDescPrec += parseFloat(valor); 
+              }
+          });
+          $('#totalDescuento').val("$"+ " "+totalDescPrec.toFixed(2));
+
+      };
+
+      $(document).click(function(){
+        suma();
+      });
+
+
+      $("#tablaLista").on("click", ".disminuir", function() {
+        var parent = $(this).parent().parent();
+        var value = parseInt(parent.find('input[name="cantidadN[]"]').val(), 10);
+        var idFila = parent.find('input[name="cantidadN[]"]').attr("idGeneral");
+        value = isNaN(value) ? 0 : value;
+
+        if(value>=1){
+          value--;
+          if (value == 0) {
+            swal("Error!","No se puede ingresar una cantidad menor a 1","error");
+          }else{
+
+            parent.find('input[name="cantidadN[]"]').val(value);
+                  /********actualizar localstorage al disminuir cantidad*/
+          var arregloProductos = localStorage.ProductosAdd.split(',');
+          var idProducto = parent.find('input[name="idProducto[]"]').val();
+          var types = JSON.parse(arregloProductos);
+                    
+          for (var i = 0; i < types.length; i++) {
+            var id = types[i].idProducto;
+            if (id === idProducto) {
+              var cantidadProducto =  value;
+
+              delete types[i].cantidad;
+              localStorage.ProductosAdd = JSON.stringify(types);
+              types[i].cantidad = cantidadProducto;
+              localStorage.ProductosAdd = JSON.stringify(types);
+            
+            }else{
+            }
+          }
+          /********actualizar localstorage al disminuir cantidad*/
+          var precioProducto = $("#precioInicial"+idFila+"").val();
+          var precioOriginal = $("#precioOrg"+idFila+"").val();
+          var descuentoInicial = $("#descuentoOrg"+idFila+"").val();
+          var unidadesTotales = localStorage.getItem("unidades");
+
+          if (unidadesTotales == null) {
+
+            localStorage.setItem("unidades",value);
+
+            var precioTotal = value * precioProducto;
+            var precioSinDescuento = value * precioOriginal;
+
+
+            $("#precioP"+idFila+"").val("$"+" "+precioTotal.toFixed(2));
+            $("#precioTx"+idFila+"").val("$"+" "+precioSinDescuento.toFixed(2));
+
+            var precioOriginalF = value * precioOriginal;
+            $("#precioSnDescuento"+idFila+"").val(precioOriginalF.toFixed(2));
+
+            var totalDesc = (precioOriginalF*descuentoInicial)/100;
+            $("#totalDescPrecio"+idFila+"").val(totalDesc.toFixed(2));
+
+          }else{
+                        
+            var totalUnidades = value;
+            localStorage.setItem("unidades",totalUnidades);
+
+            var precioTotal = value * precioProducto;
+            var precioSinDescuento = value * precioOriginal;
+
+            $("#precioP"+idFila+"").val("$"+" "+precioTotal.toFixed(2));
+            $("#precioTx"+idFila+"").val("$"+" "+precioSinDescuento.toFixed(2));
+
+            var precioOriginalF = totalUnidades * precioOriginal;
+            $("#precioSnDescuento"+idFila+"").val(precioOriginalF.toFixed(2));
+
+            var totalDesc = (precioOriginalF*descuentoInicial)/100;
+            $("#totalDescPrecio"+idFila+"").val(totalDesc.toFixed(2));
+          }
+
+          }
+          
+        }
+      })
+    </script>
+  </body>
+</html>

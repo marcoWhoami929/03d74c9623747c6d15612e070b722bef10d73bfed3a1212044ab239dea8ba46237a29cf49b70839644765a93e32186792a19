@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    
+    <title>DEKKERAPP</title>
+</head>
+
+
+<body>
+    <div class="container col-lg-12">
+        <div class="row">
+
+            <div class="divBienvenidaMarcas">
+        
+                <div class="col-lg-12 col-md-12 col-sm-12 divImg2">
+                  <a href="index.html"><center><img src="img/logo-blanco.png" alt="" id="img2"></center></a>  
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 divBienvenida">
+                    <div class="bar bar-header" id="btnRegresar" style="margin-top: 2%; margin-left: -10px;">
+                        <a href="javascript: history.go(-1)" class="button button-clear"><i class="fas fa-arrow-circle-left fa-3x"></i></a>   
+                    </div>
+                    <div style="width:5%;float: left;margin-top: 12px;margin-left: 5px;">
+                        <a href="searchProductos.html"><i class="fa fa-search" href="searchProductos.html" aria-hidden="true" style="color: white;font-size: 20px"></i></a>
+                    </div>
+                    <div>
+                        <h2 style="margin-left: 30%">Mis Favoritos</h2>
+                        <a href="procesoSolicitud.html"><div id="carroComprasMV" class="animated shake"><img src="img/carrito-compras.png" alt="" width="100%"></div></a>
+                    </div>
+                  
+                </div>
+
+            </div>
+            <div style="margin-top: 50%">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 50px">
+
+                    <table class="subcategoriaMarca" id="subcategoriaMarca">
+                        <div class="container col-lg-12 col-md-12 col-sm-12">
+                            <div class="row" id="contenedors">
+
+                               
+                                
+                            </div>
+                        </div>
+                    </table>
+                
+                </div>
+            </div>
+
+      </div>
+
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script>
+        $(document).ready(function(){
+            var json = localStorage.arregloFavoritos;
+            var types = JSON.parse(json);
+            $("#contenedors").html("");
+            for (x = 0; x < types.length; x++) {
+                var precio = types[x].precioProducto * 1;
+                var descuento = types[x].descuento * 1;
+                var precioF = (precio * descuento)/100;
+
+                if (descuento != 0) {
+                    var precioDescuento = precio - precioF;
+                    
+                    var div = `<div class="col-lg-12 col-md-12 col-sm-12" id="contMasVendidos">
+                        <div id="svgOff" >
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                        <div id="imgName">
+                            <center>
+                                <img src="`+types[x].foto+`" alt="" style="width:80%; height:40%;">
+                            </center>
+                            <label id="nameProducto">`+types[x].descripcion+`</label>
+                        </div>
+                    
+                        <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                        <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                        <br>
+                        <br>
+                           
+                        <div id="cantidad">
+                            <center>
+                                <table id="tableBotones">
+                                    <tr>
+                                        <th scope="col">
+                                            <button class="btn btn-outline-info disminuir" type = "button" style="width:100%;height:35px;"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                        </th>
+                                        <th scope="col">
+                                            <input type="text" name="number[]" valor="1" maxlength="2" max="50" size="1" id="number" style="" class="" placeholder="" value="1"/>
+                                        </th>
+                                        <th scope="col">
+                                            <button class="btn btn-outline-info aumentar" type = "button" style="width:100%;height:35px;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="border-top:2px;background-color:#fff;">
+                                           <button type="button" class="btn btn-outline-success btnAgregarProd" id="btnAgregarProd" idProducto ="`+types[x].idProducto+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precioProducto+`" unidadMedida ="`+types[x].unidadElegida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+types[x].descuento+`">Agregar</button>
+                                        </td>
+                                        <td style="background-color:#fff;">
+                                        <center>
+                                            <button type="button" class="btn btn-outline-danger favoritosEliminar" id="favoritosEliminar" idFavoritoEliminar="`+types[x].idFavorito+`" idProductoF="`+types[x].idProducto+`"><i class="fas fa-trash-alt"></i></button>
+                                        </center>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </div>
+                        <div class="col" id="footButtons">
+                            
+                        </div>
+                    </div>`;
+                }else{
+                    var precioDescuento = precio;
+
+                    var div = `<div class="col-lg-12 col-md-12 col-sm-12" id="contMasVendidos">
+                        <div id="svgOff" style="display:none">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <!--- Etiqueta Oferta de Promoción -->
+                                <g>
+                                  <!--- Etiqueta -->
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="oferta-verde" d="M0,0h41.4L100,58.6V100L0,0z"/>
+                                  <!--- Texto -->
+                                  <text x="20" y="38" transform="rotate(45 48 48)" class="texto-oferta-verde">$ `+precio.toFixed(2)+`</text>  
+                                </g>
+                            <!--- Etiqueta Superior triangular -->
+                                <g>  
+                                  <path fill-rule="evenodd" clip-rule="evenodd" class="triangulo" d="M100,0v59L41,0H100z"/>
+                                  <!--- Texto triángulo -->  
+                                  <text x="30" y="11" transform="rotate(45 48 48)" class="texto-triangulo">-`+descuento+`</text>
+                                  <text x="57" y="11" transform="rotate(45 48 48)" class="texto-descuento">%</text>
+                                </g>   
+                            </svg>
+                        </div>
+                        <div id="imgName">
+                            <center>
+                                <img src="`+types[x].foto+`" alt="" style="width:80%; height:40%;">
+                            </center>
+                            <label id="nameProducto">`+types[x].descripcion+`</label>
+                        </div>
+                    
+                        <span type="text" style="font-size:15px;color:orange;" >$ `+precioDescuento.toFixed(2)+`</span>
+                        <span type="text" style="font-size:15px;color:orange; margin-left:10%;" > `+types[x].valorMedida+`</span>
+                        <br>
+                        <br>
+                           
+                        <div id="cantidad">
+                            <center>
+                                <table id="tableBotones">
+                                    <tr>
+                                        <th scope="col">
+                                            <button class="btn btn-outline-info disminuir" type = "button" style="width:100%;height:35px;"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                        </th>
+                                        <th scope="col">
+                                            <input type="text" name="number[]" valor="1" maxlength="2" max="50" size="1" id="number" style="" class="" placeholder="" value="1"/>
+                                        </th>
+                                        <th scope="col">
+                                            <button class="btn btn-outline-info aumentar" type = "button" style="width:100%;height:35px;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="border-top:2px;background-color:#fff;">
+                                           <button type="button" class="btn btn-outline-success btnAgregarProd" id="btnAgregarProd" idProducto ="`+types[x].idProducto+`" descripcion="`+types[x].descripcion+`" codigoProducto ="`+types[x].codigoProducto+`" precioProducto ="`+types[x].precioProducto+`" unidadMedida ="`+types[x].unidadElegida+`" foto="`+types[x].foto+`" precioDescuento="`+precioF.toFixed(2)+`" descuento="`+types[x].descuento+`">Agregar</button>
+                                        </td>
+                                        <td style="background-color:#fff;">
+                                        <center>
+                                            <button type="button" class="btn btn-outline-danger favoritosEliminar" id="favoritosEliminar" idFavoritoEliminar="`+types[x].idFavorito+`" idProductoF="`+types[x].idProducto+`"><i class="fas fa-trash-alt"></i></button>
+                                        </center>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </div>
+                        <div class="col" id="footButtons">
+                            
+                        </div>
+                    </div>`;
+                }
+
+               
+                
+                $("#contenedors").append(div);
+                
+            }
+
+        });
+         $("#contenedors").on("click", ".aumentar", function() {
+            var parent = $(this).parent().parent();
+            var value = parseInt(parent.find('input[name="number[]"]').val(), 10);
+                value = isNaN(value) ? 0 : value;
+                if(value<50){
+                    value++;
+         
+                   parent.find('input[name="number[]"]').val(value);
+                       
+                }
+
+
+         })
+           $("#contenedors").on("click", ".disminuir", function() {
+            var parent = $(this).parent().parent();
+            var value = parseInt(parent.find('input[name="number[]"]').val(), 10);
+                value = isNaN(value) ? 0 : value;
+                if(value>=1){
+                    value--;
+         
+                   parent.find('input[name="number[]"]').val(value);
+                       
+                }
+
+
+         })
+
+
+        
+       
+    </script>
+</body>
+
+</html>
