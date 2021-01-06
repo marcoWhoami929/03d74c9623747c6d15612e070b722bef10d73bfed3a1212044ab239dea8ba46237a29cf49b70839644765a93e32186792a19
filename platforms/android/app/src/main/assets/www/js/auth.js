@@ -895,10 +895,11 @@ $(document).ready(function() {
                     $("#btnProductos").val('Verificando...');
                 },
                 success: function(data) {
+                  
                     if (data != "failed") {
                         //localStorage.arregloMarcas = data;
                         localStorage.arregloMasBuscado = data;
-                        window.location.href = "categoriasMarcas.html";
+                        //window.location.href = "categoriasMarcas.html";
                         //alert("Productos Bus; ", idCliente);
                     } else if (data == "failed") {
 

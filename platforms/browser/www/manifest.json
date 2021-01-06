@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "DEKKERAPP",
+  "short_name": "DEKKERAPP",
+  "version": "com.dekker_app.dekker_app",
+  "description": "DEKKERAPP",
+  "author": "San Francisco Dekkerlab",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}
