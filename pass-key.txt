@@ -1,1 +1,5 @@
 Whoami929
+/*****COMANDOS PARA FIRMAR LA APLICACION*****/
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore dekkerap.keystore app-release-unsigned.apk dekker
+
+zipalign -v 4 app-release-unsigned.apk dekkerappv1.2.16.apk
