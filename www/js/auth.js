@@ -1,6 +1,6 @@
 $(document).ready(function () {
   //var url = "https://sanfranciscodekkerlab.com/matriz/auth.php?callback=?";
-  var url = "http://localhost/DEKKERAPPADMIN/auth.php?callback=?";
+  var url = "http://localhost/DEKKERADMIN/auth.php?callback=?";
   //var url = "https://sanfranciscodekkerlab.com/matriz/auth.php?callback=?";
 
   //Login Function
