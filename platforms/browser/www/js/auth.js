@@ -1,7 +1,6 @@
 $(document).ready(function () {
-  //var url = "https://sanfranciscodekkerlab.com/matriz/auth.php?callback=?";
-  var url = "http://localhost/DEKKERADMIN/auth.php?callback=?";
-  //var url = "https://sanfranciscodekkerlab.com/matriz/auth.php?callback=?";
+  //var url = "http://localhost/DEKKERADMIN/auth.php?callback=?";
+  var url = "https://sanfranciscodekkerlab.com/dekkerapp/auth.php?callback=?";
 
   //Login Function
   $("#login").click(function () {
@@ -501,9 +500,13 @@ $(document).ready(function () {
 
     var formaPago = $("#formaDePago").val();
 
-    if (formaPago === "EFECTIVO") {
-      localStorage.setItem("formaPago", "EFECTIVO");
+    if (localStorage.getItem("formaPago") === null) {
+      localStorage.setItem("formaPago", "POR DEFINIR");
     } else {
+      if (formaPago === "EFECTIVO") {
+        localStorage.setItem("formaPago", "EFECTIVO");
+      } else {
+      }
     }
 
     var listaProductos = localStorage.ProductosAdd;
@@ -933,7 +936,7 @@ $(document).ready(function () {
             }
             var json = localStorage.rutaSolicitud;
             window.open(
-              `https://sanfranciscodekkerlab.com/matriz/` + json + ``,
+              `https://sanfranciscodekkerlab.com/dekkerapp/` + json + ``,
               "_system"
             );
           } else if (data == "failed") {
@@ -1029,6 +1032,7 @@ $(document).ready(function () {
             //window.location.href = "categoriasMarcas.html";
             //alert("Productos Bus; ", idCliente);
           } else if (data == "failed") {
+            localStorage.arregloMasBuscado = '[{}]';
             //window.location.href = "estatus.html";
             //swal("No hay Conexión...", "", "info");
           }
